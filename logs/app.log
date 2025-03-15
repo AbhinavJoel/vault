@@ -1,0 +1,8 @@
+{"level":"info","message":"Starting app...","mongoUri":"mongodb://mongo:27017/image_db","timestamp":"2025-03-15T22:42:50.204Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-03-15T22:42:50.214Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-15T22:42:50.733Z"}
+{"level":"info","message":"Starting app...","mongoUri":"mongodb://mongo:27017/image_db","timestamp":"2025-03-15T22:51:12.994Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-03-15T22:51:13.004Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-15T22:51:13.521Z"}
+{"filename":"1742079148848-Screenshot 2025-03-13 at 2.42.37â¯PM.png","id":"67d604ac144c94b2bab5f173","ip":"::ffff:192.168.65.1","level":"info","message":"File uploaded","timestamp":"2025-03-15T22:52:28.877Z"}
+{"id":"67d604ac144c94b2bab5f173","ip":"::ffff:192.168.65.1","level":"info","message":"File streamed","timestamp":"2025-03-15T22:52:28.893Z"}
