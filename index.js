@@ -10,6 +10,10 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Constants for validation
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ALLOWED_FILE_TYPES = ['image/jpeg', 'image/png', 'image/gif'];
+
 // Logging setup
 const logger = winston.createLogger({
   level: 'info',
@@ -48,7 +52,18 @@ conn.on('error', (err) => {
   process.exit(1);
 });
 
-const upload = multer({ storage: multer.memoryStorage() });
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: MAX_FILE_SIZE
+  },
+  fileFilter: (req, file, cb) => {
+    if (!ALLOWED_FILE_TYPES.includes(file.mimetype)) {
+      return cb(new Error('Invalid file type. Only JPEG, PNG and GIF are allowed.'), false);
+    }
+    cb(null, true);
+  }
+});
 
 app.get('/', (req, res) => {
   logger.info('GET / accessed', { ip: req.ip });
